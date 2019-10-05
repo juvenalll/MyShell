@@ -1,0 +1,14 @@
+
+prebuilt functions
+cd
+environ
+dir
+
+
+main function
+    read input
+    interactive mode vs "batch mode"
+    organize tokens into categorys
+    
+    take action based on tokens 
+    
