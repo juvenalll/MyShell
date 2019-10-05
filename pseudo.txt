@@ -4,10 +4,14 @@ cd
 environ
 dir
 
+action function
+    crete new process that runs
+    terminate current process when all children are done
+
 
 main function
-    read input
     interactive mode vs "batch mode"
+    read input
     organize tokens into categorys
     
     take action based on tokens 
