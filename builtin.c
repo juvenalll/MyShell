@@ -10,6 +10,9 @@ void clr(){
         clear_count+=1;
     }
 }
+void help(){
+    printf(" MyShell \n Information to help you get on your way... \n \n Builtin Functions : \n \n cd \tclr \tdir \techo \tenviron \thelp \tpause \tquit \n ");
+}
 
 void pause(){
     printf("User Paused MyShell press Enter key to resume!\n");
