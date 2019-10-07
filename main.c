@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "builtin.h"
 
 void interactive_mode(char *commands){
@@ -8,15 +9,11 @@ void interactive_mode(char *commands){
 
 
 int main(int argc, char **argv){
-    /*
+    printf("%d \n", argc);
     while(1){
-        if (argc == 0){
-            char future_input[256];
-            interactive_mode(future_input);
-            }
+        char interactive_input[256];
+        if (argc < 2 ){ interactive_mode(interactive_input);} 
     
+    }    
     return 0;
-    }
-    */
-    poop();
 }
