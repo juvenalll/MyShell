@@ -12,10 +12,15 @@ void interactive_mode(char *commands){
 
 int main(int argc, char **argv){
     printf("%d \n", argc);
-    while(1){
-        char interactive_input[256];
-        if (argc < 2 ){ interactive_mode(interactive_input);} 
+    getCLargs(argv,argc);
     
-    }    
+    while(1){
+        char input[256];
+        if (argc < 2 ){ interactive_mode(input);} 
+        else{ getCLargs(argv, argc);}
+        
+
+    }   
+     
     return 0;
 }

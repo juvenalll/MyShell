@@ -10,7 +10,18 @@ void clr(){
         clear_count+=1;
     }
 }
+
+void pause(){
+    printf("User Paused MyShell press Enter key to resume!\n");
+    char Enter;
+    while(Enter != '\n'){
+        scanf("%c",&Enter);
+    }
+    printf("Welcome Back Brother! \n");
+    
+
+}
 void quit(){
-    printf(" ~Thank You For Using MyShell ~ \n");
+    printf(" ~ Thank You For Using MyShell ~ \n");
     exit(1);
 }
