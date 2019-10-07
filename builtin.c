@@ -3,6 +3,22 @@
 #include <stdlib.h>
 #include "builtin.h"
 // C File Where I Define All Prebuilt Functions 
+void cd(char *location){
+ //If given no argument cd takes you to the root else it takes you to the desired subfolder
+    if (location == NULL){
+        chdir("~");
+        return;
+    }
+    char current[256];
+    getcwd(current,256);
+    char subFolder[1024];
+    snprintf(subFolder, sizeof(subFolder), "%s: %s: %s", current , "/", location);
+    chdir(subFolder);
+    if(chdir(subFolder)== -1){
+        printf("This folder may not exist! \n");
+    }
+
+}
 void clr(){
     int clear_count = 0;
     while(clear_count< 25){
