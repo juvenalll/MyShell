@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "builtin.h"
+#include "help.h"
 
+// The Main File Strives To Be as Minimalistic and Uncluttered as Possible.
 void interactive_mode(char *commands){
     printf("myshell>");
     scanf("%s", commands);

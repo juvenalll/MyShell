@@ -2,13 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "builtin.h"
-
-void poop(){
-    printf ("pooper \n");
-}
-void hello(){
-    printf("hello\n");
-}
+// C File Where I Define All Prebuilt Functions 
 void quit(){
     printf(" ~Thank You For Using MyShell ~ \n");
     exit(1);
