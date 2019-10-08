@@ -3,4 +3,7 @@
 //Any function created to merely simplify the operation of the program goes here
 void getCLargs();
 
+int special_characters();
+
+
 #endif
