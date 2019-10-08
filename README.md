@@ -3,11 +3,13 @@
 read me file is made for user
 program description is made more technical
 
-<b>MyShell</b>
-<h1> Created by Juvenal Arellano-Santana </h1>
+<h1>MyShell</h1>
+<sub> Created by Juvenal Arellano-Santana </sub>
 <h3>CIS 3207 </h3>
 
 <p>
-Do you want a shell?
-Here use <i> this</i> 
+Do you want a <i>shell?</i>
+Here use <i> this</i> don't be <i>shy</i> it's simple to use!
 </p>
+
+<p>It already comes with many <b>commands</b> !</p>
