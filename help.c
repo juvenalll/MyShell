@@ -19,3 +19,25 @@ int special_characters(char *unprocessed_argument){
     }
 }
 
+//determines whether or not the function is a builtin one or not
+int predefined (char *unprocessed_argument){ 
+    char predefined[8][16];
+    strcpy(predefined[0], "cd");
+    strcpy(predefined[1], "clr");
+    strcpy(predefined[2], "dir");
+    strcpy(predefined[3], "echo");
+    strcpy(predefined[4], "environ");
+    strcpy(predefined[5], "help");
+    strcpy(predefined[6], "pause");
+    strcpy(predefined[7], "quit");
+    int i = 0 ;
+    while(i < 9){
+        char *char_point = strstr(unprocessed_argument,predefined[i]);
+        if(char_point != NULL){
+            return 1;
+        }
+        i+=1;
+    }
+    return 0;
+}
+
