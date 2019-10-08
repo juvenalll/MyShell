@@ -1,6 +1,6 @@
 #ifndef BUILTIN_H
 #define BUILTIN_H
-
+// These are the builtin functions the user simply has access to
 void cd();
 void clr();
 void dir();
