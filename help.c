@@ -10,6 +10,7 @@ void getCLargs(char **CL, int arg_count){
 }
 
 // codeblock for figuring out if we can just run smoothly without worrying about pesky >,&,|
+// 1 = contains  0= does not contain
 int special_characters(char *unprocessed_argument){
     char* search = strpbrk(unprocessed_argument, "><|&");
     if(search == NULL){
@@ -20,6 +21,7 @@ int special_characters(char *unprocessed_argument){
 }
 
 //determines whether or not the function is a builtin one or not
+//1 = builtin        0 = not 
 int predefined (char *unprocessed_argument){ 
     char predefined[8][16];
     strcpy(predefined[0], "cd");
@@ -39,5 +41,19 @@ int predefined (char *unprocessed_argument){
         i+=1;
     }
     return 0;
+}
+
+void run_builtin(char *single_command){
+    int ascii_val = 0;
+    char command[24];
+    strcpy(command,single_command);
+    int i;
+    while (i < strlen(command)){
+        ascii_val += (int) command[i];
+        i+=1;
+    }
+    switch(command){
+        case
+    }
 }
 

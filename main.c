@@ -11,21 +11,23 @@ void interactive_mode(char *commands){
 
 
 int main(int argc, char **argv){
-    /*
-    printf("%d \n", argc);
-    getCLargs(argv,argc);
-    help();  */
-    int p = special_characters("pizz|pie");
-    printf("%d",p);
-    /*
+    int builtin_function;
+    int special_characters;
+   
+    
     while(1){
         char input[256];
         if (argc < 2 ){ interactive_mode(input);} 
         else{ getCLargs(argv, argc);}
+        builtin = predefined(input);
+        special_characters = special_characters(input);
+        char* token = strtok(input, " ");
+
+        if (builtin && !(special_characters)){
+            // call predefined functions
+        }
 
 
     }   
-    */ 
-    dir();
     return 0;
 }

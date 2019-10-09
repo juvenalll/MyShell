@@ -4,6 +4,7 @@
 void getCLargs();
 
 int special_characters();
-
+int predefined();
+void builtin();
 
 #endif
