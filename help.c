@@ -9,6 +9,15 @@
 void getCLargs(char **CL, int arg_count){
     for(int i = 0 ; i <= arg_count-1 ;i++){ printf("%s\n", CL[i]); }   
 }
+void tokenize (char *line, char ** words){
+    int i = 0;
+    char* token = strtok(line, " ");
+    while( token != NULL){
+        words[i] = token;
+        i++;
+        token = strtok(NULL, " ");
+    }
+}
 
 // codeblock for figuring out if we can just run smoothly without worrying about pesky >,&,|
 // 1 = contains  0= does not contain

@@ -1,5 +1,5 @@
 #import "pipe_fork.h"
-#include <sys⁄wait.h>
+//#include <sys⁄wait.h>
 #include <unistd.h>
 #include <stdio.h>
 
@@ -17,7 +17,7 @@ void simple_fork(char **commands){
     wait (3);
 }
 
-void pipe(){
+void piping_required(){
 
 }
 void redirection(){

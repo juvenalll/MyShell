@@ -21,15 +21,16 @@ int main(int argc, char **argv){
         else{ getCLargs(argv, argc);}
         builtin = predefined(input);
         special = special_characters(input);
-        char* token = strtok(input, " ");
+        char *tokens[16];
+        
 
         // call predefined functions with no redirection
         if (builtin && !(special_characters)){
-            if (token == "cd"){
-                token = strtok(NULL, ' ');
-                cd(token);
+            if (tokens[0] == "cd"){
+              //  token = strtok(NULL, ' ');
+                cd(tokens[1]);
             }else{
-                run_builtin(token);
+                run_builtin(tokens[0]);
             }
         }
         //simple command but not builtin
