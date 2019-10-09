@@ -32,6 +32,10 @@ int main(int argc, char **argv){
                 run_builtin(token);
             }
         }
+        //simple command but not builtin
+        if (!(builtin) && !(special_characters)){
+
+        }
 
 
     }  
