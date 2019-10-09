@@ -13,13 +13,12 @@ void tokenize (char line[], char *words[]){
     int i = 0;
     printf("%s\n", line);
     char* token = strtok(line, " ");
-    printf("%s\n", token);
     while( token != NULL){
-        printf("%s", words[i]);
         words[i] = token;
         i++;
         token = strtok(NULL, " ");
     }
+  
 }
 
 // codeblock for figuring out if we can just run smoothly without worrying about pesky >,&,|
