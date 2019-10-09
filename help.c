@@ -9,10 +9,13 @@
 void getCLargs(char **CL, int arg_count){
     for(int i = 0 ; i <= arg_count-1 ;i++){ printf("%s\n", CL[i]); }   
 }
-void tokenize (char *line, char ** words){
+void tokenize (char line[], char *words[]){
     int i = 0;
+    printf("%s\n", line);
     char* token = strtok(line, " ");
+    printf("%s\n", token);
     while( token != NULL){
+        printf("%s", words[i]);
         words[i] = token;
         i++;
         token = strtok(NULL, " ");

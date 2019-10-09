@@ -13,15 +13,23 @@ void interactive_mode(char *commands){
 int main(int argc, char **argv){
     int builtin;
     int special;
-    run_builtin(cd);
-   
+    
+    char *words[6]= {"Yachty"};
+    char test[] = "get off me in the club";
+    printf("%s\n", test);
+    tokenize(test, words);
+    for( int i = 0; i < 6; i++){
+        printf("%s \n",words[i]);
+        }
+   /*
     while(1){
         char input[256];
         if (argc < 2 ){ interactive_mode(input);} 
         else{ getCLargs(argv, argc);}
         builtin = predefined(input);
         special = special_characters(input);
-        char *tokens[16];
+       // char *tokens[16] = tokenize(input);
+        
         
 
         // call predefined functions with no redirection
@@ -39,7 +47,7 @@ int main(int argc, char **argv){
         }
 
 
-    }  
+    }  */ 
     
     return 0;
 }
