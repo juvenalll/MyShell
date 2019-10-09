@@ -44,7 +44,7 @@ int predefined (char *unprocessed_argument){
     return 0;
 }
 
-// runs a predefined function by getting the ascii value of the command
+// runs a predefined function by getting the ascii value of the command except for cd
 void run_builtin(char *single_command){
     int ascii_val = 0;
     char command[24];
@@ -57,9 +57,6 @@ void run_builtin(char *single_command){
     printf("ASCII : %d \n",ascii_val);
     
     switch(ascii_val){
-        case 199:
-            cd("path");
-            break;
         case 321:
             clr();
             break;

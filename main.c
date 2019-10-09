@@ -13,7 +13,6 @@ void interactive_mode(char *commands){
 int main(int argc, char **argv){
     int builtin;
     int special;
-    char *cd= "cd";
     run_builtin(cd);
    
     while(1){
@@ -24,8 +23,14 @@ int main(int argc, char **argv){
         special = special_characters(input);
         char* token = strtok(input, " ");
 
+        // call predefined functions with no redirection
         if (builtin && !(special_characters)){
-            // call predefined functions
+            if (token == "cd"){
+                token = strtok(NULL, ' ');
+                cd(token);
+            }else{
+                run_builtin(token);
+            }
         }
 
 
