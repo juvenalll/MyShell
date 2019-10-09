@@ -3,8 +3,8 @@
 //Any function created to merely simplify the operation of the program goes here
 void getCLargs();
 
-int special_characters();
+int special_characters(char *input);
 int predefined();
-void builtin();
+void run_builtin(char *input);
 
 #endif

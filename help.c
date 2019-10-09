@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "help.h"
+#include "builtin.h"
 
 
 // A File Where All Custom Functions Go As To Not Make The Main File A Cluttered Mess
@@ -43,17 +44,47 @@ int predefined (char *unprocessed_argument){
     return 0;
 }
 
+// runs a predefined function by getting the ascii value of the command
 void run_builtin(char *single_command){
     int ascii_val = 0;
     char command[24];
     strcpy(command,single_command);
-    int i;
+    int i= 0;
     while (i < strlen(command)){
         ascii_val += (int) command[i];
         i+=1;
     }
-    switch(command){
-        case
+    printf("ASCII : %d \n",ascii_val);
+    
+    switch(ascii_val){
+        case 199:
+            cd("path");
+            break;
+        case 321:
+            clr();
+            break;
+        case 319:
+            dir();
+            break;
+        case 415:
+            echo();
+            break;
+        case 779:
+            environ();
+            break;
+        case 425:
+            help();
+            break;
+        case 542:
+            pause();
+            break;
+        case 451:
+            quit();
+            break;
+        default:
+            printf("Error");
     }
+    
+    
 }
 

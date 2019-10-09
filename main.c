@@ -11,16 +11,17 @@ void interactive_mode(char *commands){
 
 
 int main(int argc, char **argv){
-    int builtin_function;
-    int special_characters;
+    int builtin;
+    int special;
+    char *cd= "cd";
+    run_builtin(cd);
    
-    
     while(1){
         char input[256];
         if (argc < 2 ){ interactive_mode(input);} 
         else{ getCLargs(argv, argc);}
         builtin = predefined(input);
-        special_characters = special_characters(input);
+        special = special_characters(input);
         char* token = strtok(input, " ");
 
         if (builtin && !(special_characters)){
@@ -28,6 +29,7 @@ int main(int argc, char **argv){
         }
 
 
-    }   
+    }  
+    
     return 0;
 }
