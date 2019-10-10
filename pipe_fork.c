@@ -17,6 +17,12 @@ void simple_fork(char **commands){
 }
 
 void piping_required(){
+    int file_transfer[2];
+    pid_t child1, child2;
+    int status = pipe(file_transfer);
+    if(status < 0){
+        print("Error \n");
+    }
 
 }
 void redirection(){
