@@ -35,7 +35,7 @@ int special_characters(char unprocessed_argument[]){
 
 //determines whether or not the function is a builtin one or not
 //1 = builtin        0 = not 
-int predefined (char *unprocessed_argument){ 
+int predefined (char unprocessed_argument[]){ 
     char predefined[8][16];
     strcpy(predefined[0], "cd");
     strcpy(predefined[1], "clr");
@@ -46,8 +46,9 @@ int predefined (char *unprocessed_argument){
     strcpy(predefined[6], "pause");
     strcpy(predefined[7], "quit");
     int i = 0 ;
-    while(i < 9){
+    while(i < 8){
         char *char_point = strstr(unprocessed_argument,predefined[i]);
+        printf("%d  %s \n ",i,char_point);
         if(char_point != NULL){
             return 1;
         }

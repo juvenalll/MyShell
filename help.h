@@ -4,7 +4,7 @@
 void getCLargs();
 
 int special_characters(char input[]);
-int predefined();
+int predefined(char input[]);
 void run_builtin(char *input);
 void tokenize(char * line, char **words);
 #endif

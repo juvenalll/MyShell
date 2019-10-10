@@ -34,7 +34,8 @@ int main(int argc, char **argv){
             }
         }
         //simple command but not builtin
-        if (!(builtin) && !(special_characters)){
+        if (builtin == 0 && special == 0){
+            printf("not builtin\n");
 
         }
 
