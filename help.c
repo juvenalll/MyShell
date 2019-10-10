@@ -9,9 +9,10 @@
 void getCLargs(char **CL, int arg_count){
     for(int i = 0 ; i <= arg_count-1 ;i++){ printf("%s\n", CL[i]); }   
 }
+//  turns string of input into seperate words 
+
 void tokenize (char line[], char *words[]){
     int i = 0;
-    printf("%s\n", line);
     char* token = strtok(line, " ");
     while( token != NULL){
         words[i] = token;
@@ -23,7 +24,7 @@ void tokenize (char line[], char *words[]){
 
 // codeblock for figuring out if we can just run smoothly without worrying about pesky >,&,|
 // 1 = contains  0= does not contain
-int special_characters(char *unprocessed_argument){
+int special_characters(char unprocessed_argument[]){
     char* search = strpbrk(unprocessed_argument, "><|&");
     if(search == NULL){
         return 0;
@@ -90,7 +91,8 @@ void run_builtin(char *single_command){
             quit();
             break;
         default:
-            printf("Error");
+            printf("Error... call help for commands... \n");
+            break;
     }
     
     
