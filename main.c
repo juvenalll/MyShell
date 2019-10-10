@@ -25,7 +25,7 @@ int main(int argc, char **argv){
         
 
         // call predefined functions with no redirection
-        if (builtin == 1  && special== 0){
+        if (builtin == 1  && special == 0){
             if (tokens[0] == "cd"){
               //  token = strtok(NULL, ' ');
                 cd(tokens[1]);

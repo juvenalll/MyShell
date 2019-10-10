@@ -49,11 +49,10 @@ int predefined (char unprocessed_argument[]){
     while(i < 8){
         char *char_point = strstr(unprocessed_argument,predefined[i]);
         printf("%d  %s \n ",i,char_point);
-        if(char_point != NULL){
-            return 1;
-        }
+        if(char_point != NULL){ return 1;}
         i+=1;
     }
+
     return 0;
 }
 
@@ -97,5 +96,9 @@ void run_builtin(char *single_command){
     }
     
     
+}
+// check if any pipe business is occurring
+int pipe_check(char input[]){
+
 }
 
