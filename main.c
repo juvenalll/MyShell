@@ -13,6 +13,7 @@ void interactive_mode(char commands[]){
 int main(int argc, char **argv){
     int builtin;
     int special;
+    int pipes;
     while(1){
         char input[256];
         if (argc < 2 ){ interactive_mode(input);} 
@@ -37,6 +38,10 @@ int main(int argc, char **argv){
         if (builtin == 0 && special == 0){
             printf("not builtin\n");
 
+        }
+        //contains odd characters we must account for but also builtin
+        if(special == 1 && builtin == 1 ){
+            
         }
 
 

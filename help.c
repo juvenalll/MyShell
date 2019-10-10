@@ -99,6 +99,12 @@ void run_builtin(char *single_command){
 }
 // check if any pipe business is occurring
 int pipe_check(char input[]){
-
+    int pipes = 0;
+    int i;
+    int length = strlen(string);
+    for (i = 0; i < length; i++){
+        if (string[i] == '|'){pipes++; }
+     }
+    return pipes;
 }
 

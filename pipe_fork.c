@@ -1,7 +1,8 @@
 #import "pipe_fork.h"
 #include <unistd.h>
 #include <stdio.h>
-
+#define READ 0
+#define WRITE 1 
 // not built in but no special commands
 void simple_fork(char **commands){
     int pid = fork();
