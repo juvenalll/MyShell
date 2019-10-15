@@ -6,8 +6,14 @@
 
 
 // A File Where All Custom Functions Go As To Not Make The Main File A Cluttered Mess
-void getCLargs(char **CL, int arg_count){
-    for(int i = 0 ; i <= arg_count-1 ;i++){ printf("%s\n", CL[i]); }   
+//reads from one batch file
+void batch_read(char **command_line_args, char *output){
+    FILE *file_pointer = (command_line_args[1],"r");
+    if (pointer == NULL){
+        fprint("not a valid file ! \n");
+        return 0;
+        }
+    fgets(output, sizeof(output), file_pointer);
 }
 //  turns string of input into seperate words 
 
