@@ -7,6 +7,7 @@
 
 // A File Where All Custom Functions Go As To Not Make The Main File A Cluttered Mess
 //reads from one batch file
+/*
 void batch_read(char **command_line_args, char *output){
     FILE *file_pointer = (command_line_args[1],"r");
     if (pointer == NULL){
@@ -15,16 +16,21 @@ void batch_read(char **command_line_args, char *output){
         }
     fgets(output, sizeof(output), file_pointer);
 }
-
+*/
 //  turns string of input into seperate words 
 void tokenize (char line[], char *words[]){
     int i = 0;
-    char* token = strtok(line, " ");
-    while( token != NULL){
+    char s[256];
+    strcpy(s,line);
+    char* token = strtok(s, " ");
+    while( token ){
         words[i] = token;
+        //printf("%s toke\n",token);
         i++;
         token = strtok(NULL, " ");
     }
+    return;
+    
   
 }
 
@@ -54,7 +60,7 @@ int predefined (char unprocessed_argument[]){
     int i = 0 ;
     while(i < 8){
         char *char_point = strstr(unprocessed_argument,predefined[i]);
-        printf("%d  %s \n ",i,char_point);
+        //printf("%d  %s \n ",i,char_point);
         if(char_point != NULL){ return 1;}
         i+=1;
     }
@@ -104,6 +110,7 @@ void run_builtin(char *single_command){
     
 }
 // check if any pipe business is occurring
+/*
 int pipe_check(char input[]){
     int pipes = 0;
     int i;
@@ -114,3 +121,4 @@ int pipe_check(char input[]){
     return pipes;
 }
 
+*/

@@ -21,7 +21,7 @@ void piping_required(){
     pid_t child1, child2;
     int status = pipe(file_transfer);
     if(status < 0){
-        print("Error \n");
+        printf("Error \n");
     }
 
 }

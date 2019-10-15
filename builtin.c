@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
+#include <unistd.h>
 #include "builtin.h"
-// C File Where I Define All Prebuilt Functions
+// C File Where I Define All Prebuilt 
 
+extern char **environment_pointer;
 void cd(char *location){
  //If given no argument cd takes you to the root else it takes you to the desired subfolder
     if (location == NULL){
@@ -45,11 +47,21 @@ void dir(){
     closedir(directory_path);
     return;
 }
-void echo(){
-    
+void echo(char *screen_text){
+    for (int i = 4 ; screen_text[i] != '\0' ; i++){
+         printf("%c",screen_text[i]);
+    }
+    printf("\n");
+    return;
 }
 void environ(){
-
+    int i =0;
+    char **environment_pointer = environ;
+    while(environment_pointer[i]){
+        printf("%s \n", environment_pointer[i]);
+        i++;
+    }
+    return;
 }
 
 void help(){
@@ -57,11 +69,9 @@ void help(){
 }
 
 void pause(){
-    printf("User Paused MyShell press Enter key to resume!\n");
+    printf("User Paused MyShell press any letter followed by Enter key to resume!\n");
     char Enter;
-    while(Enter != '\n'){
-        scanf("%c",&Enter);
-    }
+    scanf(" %[\n]", &Enter);
     printf("Welcome Back Brother! \n");
     
 
