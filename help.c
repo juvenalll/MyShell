@@ -15,8 +15,8 @@ void batch_read(char **command_line_args, char *output){
         }
     fgets(output, sizeof(output), file_pointer);
 }
-//  turns string of input into seperate words 
 
+//  turns string of input into seperate words 
 void tokenize (char line[], char *words[]){
     int i = 0;
     char* token = strtok(line, " ");

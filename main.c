@@ -14,10 +14,19 @@ int main(int argc, char **argv){
     int builtin;
     int special;
     int pipes;
+    int batch_mode = 0;
     while(1){
         char input[256];
-        if (argc < 2 ){ interactive_mode(input);} 
-        else{ getCLargs(argv, argc);}
+        
+        if (argc < 2 ){ 
+            interactive_mode(input);
+            } 
+        else{ 
+            getCLargs(argv, input);
+            batch_mode = 1;
+            }
+        
+        
         builtin = predefined(input);
         special = special_characters(input);
         char *tokens[16];
@@ -46,6 +55,9 @@ int main(int argc, char **argv){
 
 
     }  
-    
+    // if you reach the end of the program and are in batch mode you finished
+    if(batch_mode){
+        quit();
+    }
     return 0;
 }
