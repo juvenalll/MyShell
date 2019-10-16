@@ -18,9 +18,9 @@ void batch_read(char **command_line_args, char *output){
 }
 
 //  turns string of input into seperate words 
-void tokenize (char line[], char *words[]){
+void tokenize (char *line, char **words){
     int i = 0;
-    char s[256];
+    char *s = malloc(10 * sizeof(char*));
     strcpy(s,line);
     char* token = strtok(s, " ");
     while( token ){
@@ -29,6 +29,7 @@ void tokenize (char line[], char *words[]){
         i++;
         token = strtok(NULL, " ");
     }
+    words[i] = NULL;
     return;
     
   

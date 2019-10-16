@@ -35,10 +35,13 @@ int main(int argc, char **argv, char **envp){
         special = special_characters(input);
         char input_copy[256];
         strcpy(input_copy,input);
-        char *tokens[50];
+        char **tokens= malloc(10 * sizeof(char *));
         tokenize(input_copy, tokens);
-        printf("%s , %d ,   %d \n", input, builtin, special);
-        
+        int i = 0;
+        while (i<2){
+            printf( "%s \n", tokens[i]);
+            i++;
+        }
 
         // call predefined functions with no redirection
         if (builtin == 1  && special == 0){

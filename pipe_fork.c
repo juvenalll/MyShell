@@ -5,7 +5,7 @@
 #define WRITE 1 
 
 // not built in but no special commands
-void simple_fork(char *command, char *line){
+void simple_fork(char *command, char **line){
     printf("entered simple fork \n");
     int pid = fork();
     if (pid == -1){
@@ -13,7 +13,9 @@ void simple_fork(char *command, char *line){
         return;
         }
         //child
-    if (pid == 0 ){  execvp(command, line);}
+    if (pid == 0 ){  
+        printf("child  + command %s \n", command);
+        execvp(command, line);}
     //waits for child to finish ... child should not reach this point
     wait (3);
 }
