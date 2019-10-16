@@ -9,9 +9,9 @@
 //reads from one batch file
 
 void batch_read(char **command_line_args, char *output){
-    FILE *file_pointer = (command_line_args[1],"r");
-    if (pointer == NULL){
-        fprint("not a valid file ! \n");
+    FILE *file_pointer = fopen(command_line_args[1],"r");
+    if (file_pointer == NULL){
+        printf("not a valid file ! \n");
         return 0;
         }
     fgets(output, sizeof(output), file_pointer);
