@@ -15,7 +15,6 @@ void interactive_mode(char commands[]){
 int main(int argc, char **argv, char **envp){
     int builtin;
     int special;
-    int pipes;
     int batch_mode = 0;
  
     
@@ -28,7 +27,7 @@ int main(int argc, char **argv, char **envp){
             batch_read(argv, input);
             batch_mode = 1;
             }
-        
+        // in case anything goes wrong on the way
         if(input == 0 || input == NULL || input == '\0'){
             printf("error");
         }
@@ -48,12 +47,9 @@ int main(int argc, char **argv, char **envp){
             int change_directory = (strncmp(tokens[0],"cd",strlen("cd")) == 0); // (tokens[0] == "cd");
             int call_echo = (strncmp(tokens[0],"echo",strlen("echo")) == 0 );
             int call_environ = (strncmp(tokens[0],"environ",strlen("environ")) == 0);
-             //  (tokens[0] == "echo");
             printf("call env: %d ",call_environ);
-           // printf("%s",tokens[0]);
             if (change_directory){
                 printf("entered cd \n");
-              //  token = strtok(NULL, ' ');
                 cd(tokens[1]);
             }if(call_echo){
                 echo(input);
@@ -77,7 +73,6 @@ int main(int argc, char **argv, char **envp){
     if(batch_mode){
         quit();
     }
-    //main(argc , argv);
 
     } 
     

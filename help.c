@@ -12,7 +12,7 @@ void batch_read(char **command_line_args, char *output){
     FILE *file_pointer = fopen(command_line_args[1],"r");
     if (file_pointer == NULL){
         printf("not a valid file ! \n");
-        return 0;
+        return;
         }
     fgets(output, sizeof(output), file_pointer);
 }
