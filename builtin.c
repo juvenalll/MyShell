@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
-#include <unistd.h>
+//#include <unistd.h>
 #include "builtin.h"
 // C File Where I Define All Prebuilt 
 
@@ -54,9 +54,8 @@ void echo(char *screen_text){
     printf("\n");
     return;
 }
-void environ(){
-    int i =0;
-    char **environment_pointer = environ;
+void environ(char **environment_pointer){
+    int i = 0;
     while(environment_pointer[i]){
         printf("%s \n", environment_pointer[i]);
         i++;

@@ -8,7 +8,6 @@
 void interactive_mode(char commands[]){
     printf("myshell> ");
     scanf(" %[^\n]", commands);
-   // wait(30);
     return;
 }
 
@@ -18,8 +17,7 @@ int main(int argc, char **argv, char **envp){
     int special;
     int pipes;
     int batch_mode = 0;
-    //char *test[] = {"hey ", "there ", "testing ", "baby ", "one "};
-    //echo(test);
+ 
     
     while(1){
         char input[256];
@@ -27,7 +25,7 @@ int main(int argc, char **argv, char **envp){
             interactive_mode(input);
             } 
         else{ 
-            //getCLargs(argv, input);
+            batch_read(argv, input);
             batch_mode = 1;
             }
         
@@ -40,16 +38,18 @@ int main(int argc, char **argv, char **envp){
         strcpy(input_copy,input);
         char *tokens[50];
         tokenize(input_copy, tokens);
-        //printf("%s \n %d \n   %d \n", input,builtin,special);
+        printf("%s , %d ,   %d \n", input, builtin, special);
         
 
         // call predefined functions with no redirection
         if (builtin == 1  && special == 0){
-            //printf("predefined \n ");
+            printf("predefined \n");
             char **input_pointer = tokens;
             int change_directory = (strncmp(tokens[0],"cd",strlen("cd")) == 0); // (tokens[0] == "cd");
-            int call_echo = (strncmp(tokens[0],"echo",strlen("echo")) == 0 ); //  (tokens[0] == "echo");
-            //printf("call echo: %d ",call_echo);
+            int call_echo = (strncmp(tokens[0],"echo",strlen("echo")) == 0 );
+            int call_environ = (strncmp(tokens[0],"environ",strlen("environ")) == 0);
+             //  (tokens[0] == "echo");
+            printf("call env: %d ",call_environ);
            // printf("%s",tokens[0]);
             if (change_directory){
                 printf("entered cd \n");
@@ -58,7 +58,8 @@ int main(int argc, char **argv, char **envp){
             }if(call_echo){
                 echo(input);
                 strcpy(input,"");
-
+            }if(call_environ){
+                environ(envp);
             }else{
                 run_builtin(tokens[0]);
             }
@@ -76,10 +77,9 @@ int main(int argc, char **argv, char **envp){
     if(batch_mode){
         quit();
     }
-    main(argc , argv);
+    //main(argc , argv);
 
     } 
     
  return 0;
-    
 }
