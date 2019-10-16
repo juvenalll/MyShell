@@ -16,7 +16,7 @@ void simple_fork(char *command, char **line){
     if (pid == 0 ){  
         printf("child  + command %s \n", command);
         execvp(command, line);}
-    //waits for child to finish ... child should not reach this point
+    //waits for child to finish an arbitrary amount ... child should not reach this point
     wait (3);
 }
 /*
