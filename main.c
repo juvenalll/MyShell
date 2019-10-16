@@ -63,6 +63,7 @@ int main(int argc, char **argv, char **envp){
         //simple command but not builtin
         if (builtin == 0 && special == 0){
             printf("not builtin\n");
+            simple_fork(tokens[0],tokens);
 
         }
         //contains odd characters we must account for but also builtin
