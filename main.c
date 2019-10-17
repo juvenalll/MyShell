@@ -66,10 +66,6 @@ int main(int argc, char **argv, char **envp){
             simple_fork(tokens[0],tokens);
 
         }
-        //contains odd characters we must account for but also builtin
-        if(special == 1 && builtin == 1 ){
-            
-        }
         // if you reach the end of the program and are in batch mode you finished
     if(batch_mode){
         quit();
