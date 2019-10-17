@@ -9,8 +9,4 @@ void echo();
 void help();
 void pause();
 void quit();
-
-
-
-
 #endif
