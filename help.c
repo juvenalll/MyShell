@@ -61,7 +61,6 @@ int predefined (char unprocessed_argument[]){
     int i = 0 ;
     while(i < 8){
         char *char_point = strstr(unprocessed_argument,predefined[i]);
-        //printf("%d  %s \n ",i,char_point);
         if(char_point != NULL){ return 1;}
         i+=1;
     }
@@ -79,8 +78,6 @@ void run_builtin(char *single_command){
         ascii_val += (int) command[i];
         i+=1;
     }
-    printf("ASCII : %d \n",ascii_val);
-    
     switch(ascii_val){
         case 321:
             clr();
@@ -110,16 +107,4 @@ void run_builtin(char *single_command){
     
     
 }
-// check if any pipe business is occurring
-/*
-int pipe_check(char input[]){
-    int pipes = 0;
-    int i;
-    int length = strlen(string);
-    for (i = 0; i < length; i++){
-        if (string[i] == '|'){pipes++; }
-     }
-    return pipes;
-}
 
-*/

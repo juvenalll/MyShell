@@ -50,9 +50,7 @@ int main(int argc, char **argv, char **envp){
             int change_directory = (strncmp(tokens[0],"cd",strlen("cd")) == 0); // (tokens[0] == "cd");
             int call_echo = (strncmp(tokens[0],"echo",strlen("echo")) == 0 );
             int call_environ = (strncmp(tokens[0],"environ",strlen("environ")) == 0);
-            printf("call env: %d ",call_environ);
             if (change_directory){
-                printf("entered cd \n");
                 cd(tokens[1]);
             }if(call_echo){
                 echo(input);
@@ -65,7 +63,6 @@ int main(int argc, char **argv, char **envp){
         }
         //simple command but not builtin
         if (builtin == 0 && special == 0){
-            printf("not builtin\n");
             simple_fork(tokens[0],tokens);
 
         }

@@ -4,8 +4,6 @@
 
 
 void simple_fork(char *command, char **line);
-void piping_required();
-void redirection();
 
 
 #endif

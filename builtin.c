@@ -23,7 +23,7 @@ void cd(char *location){
 
 void clr(){
     int clear_count = 0;
-    while(clear_count< 25){
+    while(clear_count< 50){
         printf("\n");
         clear_count+=1;
     }

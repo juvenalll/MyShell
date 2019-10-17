@@ -7,10 +7,10 @@ program description is made more technical
 
 <p>
 Excuse me... do you want a <i>shell?</i>
-Here use  this don't be <i>shy</i> it's simple to use!
+Checkout Myshell it is easy to use!
 </p>
 
-<p>It already comes with many <b>commands</b> !</p>
+<p>It already comes with many prebuilt <b>commands</b> !</p>
 
 <h3> Builtin Commands </h3>
 <ul>
