@@ -1,8 +1,6 @@
-read me file is made for user
-program description is made more technical
 
 <h1>MyShell</h1>
-<sub> Created by Juvenal Arellano-Santana in CIS 3207 </sub>
+<sub> Created by Juvenal Arellano-Santana </sub>
 
 
 <p>
